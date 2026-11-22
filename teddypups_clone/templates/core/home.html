@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% block title %}TeddyPups | Find your little love{% endblock %}
+{% block content %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-6 hero-copy">
+                <div class="eyebrow"><span></span> DUBAI'S LITTLEST LOVE STORIES</div>
+                <h1>Small paws.<br><em>Big love.</em><br>Your forever begins here.</h1>
+                <p class="hero-lead">Meet the tiny companion who will make your world a whole lot sweeter. Thoughtfully matched, lovingly cared for, and ready for home.</p>
+                <div class="d-flex flex-wrap gap-3 mt-4"><a href="{% url 'puppies' %}" class="btn btn-dark btn-lg rounded-pill px-4">Meet our puppies <span>↗</span></a>
+                    <a href="{% url 'how_it_works' %}" class="btn btn-outline-dark btn-lg rounded-pill px-4">How it works</a></div>
+                    <div class="hero-proof">
+                        <span class="proof-icon">✦</span>
+                        <div>
+                            <strong>A thoughtful start to forever</strong><small>Personal guidance at every little step</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image-wrap">
+                        <img class="hero-image" src="https://images.unsplash.com/photo-1552059131-2c6a7a9a4a0d?w=1200&q=90" alt="Adorable fluffy puppy sitting on a soft blanket">
+                        <div class="floating-note">
+                            <span>♡</span>
+                            <div><strong>Made for cuddles</strong><small>And a lifetime of love</small>
+                        </div>
+                    </div>
+                    <div class="image-stamp">LITTLE<br>LOVE<br>CLUB</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="trust-strip">
+    <div class="container">
+        <div class="row text-center g-3">
+            <div class="col-6 col-md-3">
+                <b>♡</b><span>Personal puppy matching</span>
+            </div>
+            <div class="col-6 col-md-3"><b>✧</b><span>Carefully raised</span></div>
+            <div class="col-6 col-md-3"><b>⌂</b><span>Dubai-based support</span></div>
+            <div class="col-6 col-md-3"><b>♥</b><span>Here for your journey</span></div>
+        </div>
+    </div>
+</section>
+<section class="section-pad">
+    <div class="container">
+        <div class="section-heading text-center">
+            <div class="eyebrow centered">A FEW LITTLE HEART-STEALERS</div><h2>Meet your <em>new best friend</em></h2>
+            <p>Every puppy has a personality all their own. Let's find the one that feels like home.</p>
+        </div>
+        <div class="row g-4 mt-3">
+            {% for puppy in puppies %}
+            <div class="col-md-4">
+                <article class="puppy-card">
+                    <div class="puppy-photo">
+                        <img src="{{ puppy.image_url }}" alt="{{ puppy.name }} the {{ puppy.breed }}">
+                        <span class="photo-tag">Little love</span>
+                    </div>
+                    <div class="puppy-info">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3>{{ puppy.name }}</h3>
+                            <span class="gender">{{ puppy.gender }}</span>
+                        </div>
+                        <p>{{ puppy.breed }}{% if puppy.age %} · {{ puppy.age }}{% endif %}</p>
+                        <a href="{% url 'contact' %}" class="text-link">Ask about {{ puppy.name }} ↗</a>
+                    </div>
+                </article>
+            </div>{% endfor %}</div>
+            <div class="text-center mt-5">
+                <a href="{% url 'puppies' %}" class="btn btn-outline-dark rounded-pill px-4">See all puppies ↗</a>
+            </div>
+        </div>
+    </section>
+<section class="split-section">
+    <div class="container">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-6">
+                <img class="rounded-editorial" src="https://images.unsplash.com/photo-1583337130417-3346a1be7ddd?w=1000&q=85" alt="Fluffy little puppy relaxing">
+            </div>
+            <div class="col-lg-6 split-copy">
+                <div class="eyebrow">THE TEDDYPUPS DIFFERENCE</div>
+                <h2>A little one.<br><em>A lot of heart.</em></h2>
+                <p>Bringing a puppy home is a big, beautiful decision. We're here to make the journey feel personal, considered and full of joy — from your first hello to the first cuddle at home.</p>
+                <a class="text-link" href="{% url 'how_it_works' %}">Get to know our process ↗</a>
+                <div class="feature-list">
+                    <div><b>01</b><span><strong>Thoughtful matching</strong><small>We listen to what your family needs.</small></span>
+                    </div>
+                    <div><b>02</b><span><strong>Care comes first</strong><small>Your puppy's wellbeing matters at every step.</small></span></div>
+                    <div><b>03</b><span><strong>Here beyond hello</strong><small>Guidance as your new chapter begins.</small></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="steps-section section-pad">
+    <div class="container">
+        <div class="section-heading text-center">
+            <div class="eyebrow centered">THREE LITTLE STEPS</div>
+            <h2>Your puppy story, <em>made simple.</em></h2>
+            <p>From a first conversation to a lifetime of tail wags.</p>
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-md-4">
+                <div class="step-card"><span>01</span>
+                    <div class="step-icon">♡</div>
+                    <h3>Tell us your wishes</h3>
+                    <p>Share a little about your home, lifestyle and the companion you're dreaming of.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card"><span>02</span>
+                    <div class="step-icon">✧</div>
+                    <h3>Meet your match</h3>
+                    <p>We'll help you get to know your puppy and answer every question along the way.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card">
+                    <span>03</span>
+                    <div class="step-icon">⌂</div>
+                    <h3>Bring love home</h3><p>Get ready for tiny paws, happy routines and a whole lot of unconditional love.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="quote-section">
+    <div class="container text-center">
+        <div class="quote-mark">“</div>
+        <h2>Some of the best things in life<br>come with <em>four little paws.</em></h2>
+        <p>We can't wait to help you find yours.</p>
+        <a class="btn btn-dark rounded-pill px-4 mt-3" href="{% url 'contact' %}">Start your puppy journey ↗</a>
+    </div>
+</section>
+{% endblock %}

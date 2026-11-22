@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}How It Works | TeddyPups{% endblock %}
+{% block content %}
+<section class="inner-hero">
+    <div class="container text-center">
+        <div class="eyebrow centered">A THOUGHTFUL JOURNEY</div>
+        <h1>From first hello to <em>forever.</em></h1>
+        <p>We're here to make finding your new best friend feel easy, personal and special.</p>
+    </div>
+</section>
+<section class="section-pad">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5">
+                <img class="rounded-editorial" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1000&q=85" alt="Two happy dogs playing">
+            </div>
+            <div class="col-lg-7">
+                <div class="feature-list large">
+                    <div><b>01</b><span><strong>Let's get to know you</strong><small>Tell us about your lifestyle, home and the kind of puppy you're hoping to welcome.</small></span></div>
+                    <div><b>02</b><span><strong>Find your little match</strong><small>We'll share puppy details and help arrange a time to meet your potential new family member.</small></span></div>
+                    <div><b>03</b><span><strong>Prepare for homecoming</strong><small>We'll walk you through the essentials so you can feel ready for your puppy's arrival.</small></span></div>
+                    <div><b>04</b><span><strong>We're still here</strong><small>Your journey doesn't end at homecoming. Reach out whenever you need guidance.</small></span></div>
+                </div>
+                <a class="btn btn-dark rounded-pill px-4 mt-4" href="{% url 'contact' %}">Talk to our team ↗</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

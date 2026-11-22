@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}Visit & Contact | TeddyPups
+{% endblock %}
+{% block content %}
+<section class="inner-hero">
+    <div class="container text-center">
+        <div class="eyebrow centered">WE'D LOVE TO HEAR FROM YOU</div>
+        <h1>Let's make a little <em>magic.</em></h1>
+        <p>Tell us what you're looking for and we'll help you take the next step.</p>
+    </div>
+</section>
+<section class="section-pad">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5 contact-copy">
+                <div class="eyebrow">SAY HELLO</div>
+                <h2>Your new best friend<br>could be <em>one message away.</em></h2>
+                <p>Whether you're ready to meet a puppy or simply have a few questions, our team is happy to help.</p>
+                <div class="contact-detail"><span>✉</span>
+                    <div><small>EMAIL</small><strong>hello@teddypups.ae</strong>
+                    </div>
+                </div>
+                <div class="contact-detail"><span>☏</span>
+                    <div><small>LOCATION</small><strong>Dubai, United Arab Emirates</strong>
+                    </div>
+                </div>
+                <a class="btn btn-outline-dark rounded-pill px-4 mt-3" href="https://wa.me/971500000000" target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
+            </div>
+            <div class="col-lg-7">
+                <form class="contact-form" method="post" action="{% url 'enquiry' %}">
+                    {% csrf_token %}
+                    <h3>Send us a little note</h3>
+                    <p>Fields marked * are required.</p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label>Your name *</label>
+                            <input class="form-control" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Email address *</label>
+                            <input class="form-control" type="email" name="email" required placeholder="you@example.com">
+                        </div>
+                        <div class="col-12">
+                            <label>Phone / WhatsApp *</label>
+                            <input class="form-control" name="phone" required placeholder="+971">
+                        </div>
+                        <div class="col-12">
+                            <label>I'm interested in</label>
+                            <select class="form-select" name="interest">
+                                <option>Finding my puppy</option>
+                                <option>Booking a visit</option>
+                                <option>General question</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label>Your message *</label>
+                            <textarea class="form-control" name="message" rows="4" required placeholder="Tell us a little about the puppy you're dreaming of..."></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-dark rounded-pill px-4" type="submit">Send enquiry ↗</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
